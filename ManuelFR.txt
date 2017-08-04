@@ -193,7 +193,8 @@ speed: 6
 # Vitesse de déplacement du projectile
 
 frame: 5
-# Visuel du projectile (voir annexe en bas du document)
+# Visuel du projectile selon ce fichier : Rusted Warfare\res\drawable\projectiles.png
+# 0 est le premier à gauche
 
 
 [movement]
@@ -221,26 +222,6 @@ moveSlidingMode :false
 moveIgnoringBody:false
 # Si l'unité ignore les débris pour se déplacer, true. Sinon, false
 
-
-
-[ANNEXES]
-
-[projectile_1]
-frame :
-# Peut prendre les valeurs suivantes :
-# 0 = 
-# 1 = crachat rouge
-# 2 = grosse balle orange rouge
-# 3 = plasma orange rouge
-# 4 = missile court gris
-# 5 = balle jaune
-# 6 = crachat vert
-# 7 = boule rouge
-# 8 = trait bleu
-# 9 = boule de feu orange
-# 10 = missile long gris
-# 11 = laser court bleu
-# 12 =
 
 
 
