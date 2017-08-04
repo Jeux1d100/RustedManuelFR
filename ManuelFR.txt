@@ -183,18 +183,62 @@ shoot_light:#FFccCCEE
 [projectile_1]
 # Les composants du premier projectile
 
+frame: 5
+# Visuel du projectile selon le fichier : Rusted Warfare\res\drawable\projectiles.png
+# 0 est le premier à gauche
+
+drawSize: 10
+#Scale size of projectile
+
 directDamage: 17
 # Dégâts du projectile à l'impact sur sa cible
 
 life: 70
-# Durée de vie du projectile à l'écran
+# Durée de vie du projectile
 
 speed: 6
 # Vitesse de déplacement du projectile
 
-frame: 5
-# Visuel du projectile selon ce fichier : Rusted Warfare\res\drawable\projectiles.png
-# 0 est le premier à gauche
+targetSpeed : 6
+# Vitesse maximum de projectile, comme un missile qui accélère
+
+speedSpread : 1
+# ??
+
+ballistic : false / true
+# Le projectile tire en cloche jusqu'à ballistic_height
+
+ballistic_height : 10
+
+ballistic_delaymove_height : true / false
+# Le projectile vise le ciel avant de viser sa cible, comme un missile qui décolle
+
+targetGround
+# Si false, le projectile suit sa cible. Si true, le projectile garde sa direction initiale
+
+targetGroundSpread: 20
+# ??
+
+deflectionPower: -1
+# À -1, les défenses laser ne fonctionnent pas sur ce projectile
+# À 2, Les défenses laser consomment deux fois plus d'énergie pour arrêter ce projectile
+
+trailEffect: true
+# Si true, le projectile laisse une trainée de fumée comme un missile. Si false, non.
+
+areaDamage:30
+# Dégâts de zone, diminuent avec la distance
+
+areaRadius:30
+# Aire d'effet de areaDamage
+
+flameWeapon: true
+# Si true, le projectile est une flamme (comme pour un lance-flamme). Si false, non.
+
+hitSound: false
+# Supprime le son d'impact, utile pour les armes de type lance-flamme
+
+
 
 
 [movement]
@@ -221,6 +265,11 @@ moveSlidingMode :false
 
 moveIgnoringBody:false
 # Si l'unité ignore les débris pour se déplacer, true. Sinon, false
+
+
+
+[À FAIRE À FAIRE]
+
 
 
 
