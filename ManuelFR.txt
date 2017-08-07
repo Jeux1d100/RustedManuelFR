@@ -6,6 +6,7 @@
 ######################################
 
 
+
 [core]
 # Les composants de base de l'unité
 
@@ -48,6 +49,9 @@ fogOfWarSightRange: 20
 isBio: false 
 # Si true, l'unité est biologique et éclate à la mort. Si false, l'unité est mécanique et explose à la destruction
 
+hideScorchMark: true
+# Cache l'effet de mort par défaut pour utiliser image_wreak.png de l'unité (voir section [graphics])
+
 builtFrom_1_name: usineTank
 # De quel constructeur provient cette unité
 
@@ -60,6 +64,23 @@ builtFrom_2_name: superUsine
 builtFrom_2_pos:  2
 # Si plusieurs constructeurs produisent cette unité, continuez la liste
 
+action_1_convertTo: SentizumT2
+action_1_price: 1
+action_1_buildSpeed: 0.01
+action_1_text: SentizumT2
+ai_disableUse
+displayText
+displayDescription
+
+
+energyStartingPercentage
+# De 0 à 1, définie le taux d'énergie disponible à la création de l'unité.
+
+footprint: -1,-1,1,1
+#footprint used for collisions with units (left, up, right, down)
+
+constructionFootprint: -1,-1,1,3
+#used for placement, and placement of other buildings
 
 
 [graphics]
@@ -68,7 +89,7 @@ builtFrom_2_pos:  2
 total_frames: 2
 # Combien d'images composent le .png associé. Le moteur découpe le .png automatiquement ensuite pour créer l'animation
 
-image:        monTank.png
+image: monTank.png
 # Nom du fichier de l'unité, doit correspondre au nom dans le dossier. Indispensable.
 
 image_wreak:  monEpave.png
@@ -85,6 +106,11 @@ scaleImagesTo: 20
 scaleTurretImagesTo: 9
 #
 
+animation_attacking_pingPong: true
+animation_moving_pingPong: true
+animation_idle_pingPong: true
+#
+
 animation_moving_start: 0
 # Première image de l'animation (la première image est notée 0)
 
@@ -93,6 +119,10 @@ animation_moving_end: 1
 
 animation_moving_speed: 3
 # Vitesse à laquelle l'animation doit être jouée. Plus c'est élevé, plus c'est lent.
+
+animation_idle_start: 0
+animation_idle_end: 1
+animation_idle_speed: 2
 
 lock_body_rotation_with_main_turret: true
 # Si le châssis tourne avec la tourelle pour s'aligner au tir, true. Sinon, false
@@ -157,6 +187,8 @@ y: 0
 idleDir:0
 # Direction de la tourelle au repos, en degrés. 0 est "devant".
 
+shouldResetTurret:false
+
 projectile: 1
 # Projectile associé avec cette tourelle : voir section suivante [projectile_1]
 
@@ -187,6 +219,9 @@ frame: 5
 # Visuel du projectile selon le fichier : Rusted Warfare\res\drawable\projectiles.png
 # 0 est le premier à gauche
 
+image: bullet.png
+# Pour utiliser une image perssonnelle pour le projectile
+
 drawSize: 10
 #Scale size of projectile
 
@@ -213,7 +248,7 @@ ballistic_height : 10
 ballistic_delaymove_height : true / false
 # Le projectile vise le ciel avant de viser sa cible, comme un missile qui décolle
 
-targetGround
+targetGround : true
 # Si false, le projectile suit sa cible. Si true, le projectile garde sa direction initiale
 
 targetGroundSpread: 20
@@ -254,6 +289,9 @@ moveAccelerationSpeed: 0.03
 moveDecelerationSpeed: 0.06
 # Facteur de décélération de l'unité. Plus grand = plus rapide pour freiner
 
+reverseSpeedPercentage: 0
+# À 0 l'unité de peut pas faire marche arrière et doit tourner.
+
 maxTurnSpeed: 2.4
 # Vitesse de changement de direction de l'unité. Plus grand = plus rapide pour tourner
 
@@ -268,7 +306,12 @@ moveIgnoringBody:false
 
 
 
-[À FAIRE À FAIRE]
+
+[ai]
+buildPriority: 0.2
+noneInBaseExtraPriority: 0.5
+maxEachBase: 2
+maxGlobal: 3
 
 
 
