@@ -82,6 +82,8 @@ footprint: -1,-1,1,1
 constructionFootprint: -1,-1,1,3
 #used for placement, and placement of other buildings
 
+autoRepair: true
+# Les soigneurs/réparateurs agissent automatiquement dans leur rayon d'action
 
 [graphics]
 # Les composants du graphisme de l'unité
@@ -136,7 +138,8 @@ shadowOffsetX:1
 shadowOffsetY:1
 # Décalage de l'ombre sur l'axe vertical
 
-
+splastEffect: true
+dustEffect: true
 
 [attack]
 # Les composants de l'attaque de l'unité
