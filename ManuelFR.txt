@@ -218,6 +218,12 @@ shoot_light:#FFccCCEE
 [projectile_1]
 # Les composants du premier projectile
 
+lightingEffect:true
+# Tire un arc éléctrique comme le Amphibious Jet
+
+instant: true
+# Couplé avec lightingEffect, permet d'avoir un tir éclair
+
 frame: 5
 # Visuel du projectile selon le fichier : Rusted Warfare\res\drawable\projectiles.png
 # 0 est le premier à gauche
